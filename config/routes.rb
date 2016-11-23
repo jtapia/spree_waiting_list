@@ -1,9 +1,5 @@
 Spree::Core::Engine.routes.draw do
   resources :stock_requests
 
-  namespace :admin do
-    resources :reports, :only => [:index, :show] do
-      get 'stock_requests', :on => :collection
-    end
-  end
+  get "/admin/reports/stock_requests", to: "admin/reports#stock_requests", as: "stock_requests_admin_reports"
 end
