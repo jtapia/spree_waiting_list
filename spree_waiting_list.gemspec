@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_waiting_list'
-  s.version     = '2.4.0'
+  s.version     = '3.0'
   s.summary     = 'Add a waiting list to your spree store'
   s.description = 'The waiting list allows users to signup to be notified via email when an items comes back into stock'
   s.required_ruby_version = '>= 1.9.3'
@@ -16,7 +16,10 @@ Gem::Specification.new do |s|
 
   s.has_rdoc = false
 
-  s.add_dependency 'spree_core', '~> 2.4.6'
+  spree_version = '>= 3.1.0', '< 4.0'
+  s.add_dependency 'spree_backend', spree_version
+  s.add_dependency 'spree_core', spree_version
+  s.add_dependency 'spree_extension'
   s.add_dependency 'haml', '~> 4.0.6'
 
   s.add_development_dependency 'capybara', '~> 2.4'
